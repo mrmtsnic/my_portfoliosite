@@ -16,7 +16,7 @@ div.section {
   max-width: 960px;
   margin: 0 auto 100px;
   height: auto;
-  font-family: 'Lato',sans-serif;
+  font-family: 'Caveat', cursive;
   color: #505050;
 }
 
@@ -36,16 +36,15 @@ header {
   height: 270px;
   margin: 0 auto;
   background-color: #fff;
+  position: relative;
 
   h1 {
     a {
       color: #333;
       text-decoration: none;
-    }
-
-    img {
-      width: 275px;
-      height: 35px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 30px;
     }
   }
 
@@ -142,7 +141,7 @@ div {
       font-weight: bold;
     }
     p{
-      width: 280px;
+      width: auto;
       height: auto;
       letter-spacing: 0.1em;
     }
@@ -150,7 +149,7 @@ div {
 
 }
 
-/* サービス */
+// skill
 
 h1.class {
   text-align: center;
@@ -162,11 +161,25 @@ h1.class {
 }
 
 div {
-  &#service {
+  &#skill {
+    margin-bottom: 50px;
+
+    h1.title{
+      margin-bottom: 30px;
+    }
+
+    p.skill_title{
+      text-align: left;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
     ul {
       display: flex;
       text-align: center;
       justify-content: space-between;
+      flex-wrap: wrap;
 
       li {
         width: 280px;
@@ -182,17 +195,20 @@ div {
     }
 
     ul li dl {
-      dt span {
-        font-size: 14px;
-        display: block;
-        letter-spacing: 0.1em;
-        margin-bottom: 45px;
+      dt{
+        margin-bottom:10px;
       }
 
-      dd p {
-        text-align: left;
-        font-size: 13px;
-        margin-top: 30px;
+      dd{
+        margin-bottom: 10px;
+        img{
+          height: 54px;
+          width: 54px;
+        }
+
+        i{
+          font-size: 50px;
+        }
       }
     }
   }
@@ -200,6 +216,7 @@ div {
   &#works {
     width: 100%;
     height: auto;
+    margin-bottom: 60px;
 
     ul {
       height: auto;
@@ -216,60 +233,23 @@ div {
     }
   }
 
-  &#blog {
-    width: 100%;
+  &#contact{
     height: auto;
-    padding: 0;
 
-    ul {
-      height: auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+    p{
+      font-size: 18px;
 
-    li {
-      width: 30%;
-      height: auto;
-      margin-bottom: 60px;
-      position: relative;
-    }
-
-    dl {
-      text-align: center;
-    }
-
-    dt {
-      margin-bottom: 30px;
-    }
-
-    dd {
-      margin-bottom: 20px;
-      font-size: 13px;
-      text-align: left;
+      &#mail{
+        font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;;
+        font-weight: normal;
+        font-size: 20px;
+      }
     }
   }
+
 }
 
-// ブログ
-.more_button {
-  position: absolute;
-  bottom: -30px;
-  right: 0px;
-  display: inline-block;
-  width: 60px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  color: #333;
-  background-color: #EEEEEE;
-  font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
+// to top
 .toTop {
   text-align: center;
   margin-bottom: 20px;
@@ -290,6 +270,11 @@ footer {
 
   div.left {
     height: auto;
+    padding-left: 10px;
+  }
+
+  div.right {
+    padding-right: 10px;
   }
 }
 
@@ -318,6 +303,7 @@ footer {
 
 
     h1 {
+      padding-left:10px;
       margin: 21px 0 25px 0;
       width: 100%;
       text-align: left;
@@ -395,6 +381,13 @@ footer {
     &.section {
       width: 100%;
     }
+
+    &#contact{
+      p{
+        padding-left:20px;
+        font-size: 16px;
+      }
+    }
   }
 
   h1.title {
@@ -402,12 +395,16 @@ footer {
     margin-bottom: 40px;
   }
 
-  div#service {
+  div#skill {
     padding: 0 30px;
     margin-bottom: 60px;
 
+    ul {
+      flex-wrap: wrap;
+      align-items: center;
+    }
     ul li {
-      width: auto;
+      width: 30%;
       margin-right: 0;
       margin-bottom: 40px;
     }
@@ -420,17 +417,9 @@ footer {
     ul li dl dt span {
       margin-bottom: 20px;
     }
-
-    img {
-      width: 49px;
-      height: 51px;
-    }
   }
 
-  #service ul {
-    flex-direction: column;
-    align-items: center;
-  }
+
 
   div#works {
     width: 100%;
@@ -450,33 +439,21 @@ footer {
 
   div {
 
-
     &#works ul li {
       width: auto;
-    }
-
-    &#blog {
-      width: 100%;
-      padding: 0 30px;
-      margin-bottom: 30px;
-
-      ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      li {
-        width: auto;
-      }
     }
   }
 
   footer {
     width: 100%;
     flex-direction: column;
-  }
 
-  .left {
+    div.left{
+      padding-left: 0;
+    }
+  }
+  
+  &.left {
     margin-bottom: 20px;
 
     ul {
@@ -507,6 +484,7 @@ footer {
     }
   }
 
+
   .right {
     text-align: center;
     margin-bottom: 20px;
@@ -521,7 +499,7 @@ footer {
     h1 {
       position: absolute;
       top: 105px;
-      left: 0;
+      left: 10px;
     }
 
     ul.sns {
@@ -548,14 +526,13 @@ footer {
   }
 
   div{
-    &#service{
+    &#skill{
       max-width: 670px;
-      margin: 0 auto;
 
       ul {
   
         li {
-          width: 250px;
+          width: 30%;
           margin-right: 10px;
         }
       }
@@ -582,10 +559,6 @@ footer {
             margin-top: 30px;
           }
 
-          img{
-            width: 90px;
-            height:98px;
-          }
         }
       }
     }
@@ -604,6 +577,10 @@ footer {
         width: 240px;
         height: 240px;
       }
+
+    }
+    &#contact{
+      max-width: 600px;
     }
   }
 }
@@ -611,8 +588,8 @@ footer {
 @media (min-width:1001px){
   header {
     position: relative;
-
-
+    width: 100%;
+    top: 0;
     h1 {
       position: absolute;
       top: 105px;
@@ -634,7 +611,7 @@ footer {
 
 
   div {
-    &#service {
+    &#skill {
 
       max-width: 960px;
 
@@ -646,7 +623,7 @@ footer {
 
   
         li {
-          width: 280px;
+          width: 20%;
           margin-right: 10px;
 
           &:last-child{
@@ -691,6 +668,10 @@ footer {
         width: 260px;
         height:260px;
       }
+    }
+
+    &#contact{
+      max-width: 960px;
     }
   }
   ul.menu {
